@@ -1,30 +1,30 @@
-name: Frontend PR Checks
+# name: Frontend PR Checks
 
-on: 
+# on: 
   
-  pull_request:
-    branches: [pipeline-cleanup]
-    paths:
-    - 'database/**'
+#   pull_request:
+#     branches: [pipeline-cleanup]
+#     paths:
+#     - 'database/**'
   
-jobs:
+# jobs:
 
-  build-database:
-    name: Build-Database
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+#   build-database:
+#     name: Build-Database
+#     runs-on: ubuntu-latest
+#     permissions:
+#       contents: read
+#       packages: write
+#     steps:
+#       - name: Checkout repository
+#         uses: actions/checkout@v2
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
+#       - name: Set up Docker Buildx
+#         uses: docker/setup-buildx-action@v1
 
-      - name: Build and push Database Docker image
-        uses: docker/build-push-action@v2
-        with:
-          context: ./database/
-          push: false
-          tags: database:latest
+#       - name: Build and push Database Docker image
+#         uses: docker/build-push-action@v2
+#         with:
+#           context: ./database/
+#           push: false
+#           tags: database:latest
