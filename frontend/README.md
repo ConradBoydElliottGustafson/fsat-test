@@ -29,3 +29,5 @@ Use following path on localhost for access during development:
 
 - frontend: localhost:4200
 
+change to test frontend pipeline
+
