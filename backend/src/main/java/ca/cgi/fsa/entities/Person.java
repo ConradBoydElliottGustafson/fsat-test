@@ -2,10 +2,16 @@ package ca.cgi.fsa.entities;
 
 import java.util.Objects;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
+import org.hibernate.annotations.CollectionId;
 
 @Entity
 public class Person {
@@ -13,9 +19,15 @@ public class Person {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long personId;
 
+    @Column(nullable = false)
     private String firstName;
     private String lastName;
+    @Column(nullable = false)
     private String email;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "city_id")
+    private City city;
 
     Person() {
 
@@ -25,6 +37,22 @@ public class Person {
         this.firstName = inFirstName;
         this.lastName = inLastName;
         this.email = inEmail;
+    }
+
+    public long getPersonId() {
+        return personId;
+    }
+
+    public void setPersonId(long personId) {
+        this.personId = personId;
+    }
+
+    public City getCity() {
+        return city;
+    }
+
+    public void setCity(City city) {
+        this.city = city;
     }
 
     public String getFirstName() {
