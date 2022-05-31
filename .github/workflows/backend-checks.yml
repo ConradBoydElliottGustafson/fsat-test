@@ -1,4 +1,4 @@
-name: Frontend PR Checks
+name: Backend PR Checks
 
 on: 
   
@@ -10,7 +10,7 @@ on:
 jobs:
 
   build-backend:
-    name: Build-Backend
+    name: Build Backend Docker
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -29,15 +29,14 @@ jobs:
           push: false 
           tags: backend:latest
 
-  # tests-backend:
-  #   name: Tests-Backend
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Checkout repository
-  #       uses: actions/checkout@v2
-
-  #     - name: Tests
-  #       run: |
-  #         cd backend
-  #         npm ci
-  #         npm test      
+  test-backend:
+    name: Test Backend
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'adopt'
+      - name: Run the Maven verify phase
+        run: mvn --batch-mode --update-snapshots -f backend/ verify
