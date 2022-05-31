@@ -39,4 +39,4 @@ jobs:
           java-version: '17'
           distribution: 'adopt'
       - name: Run the Maven verify phase
-        run: mvn --batch-mode --update-snapshots -f backend/ verify
+        run: mvn --batch-mode -f backend/ verify
