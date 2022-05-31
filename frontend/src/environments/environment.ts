@@ -4,9 +4,12 @@
 
 export const environment = {
   production: false,
-  weatherApi: {
-    key: '1f0c0c542db9312b6086292e1c742c10',
-    url: 'https://api.openweathermap.org/data/2.5/weather'
+  api: {
+    host: 'localhost:8080',
+    endpoint: {
+      cities: 'cities',
+      people: 'people'
+    }
   }
 };
 

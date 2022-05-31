@@ -432,3 +432,5 @@ This repo provides a basic template to start up a new project using nodejs. It n
 
 This repo has good example APIs in different language and frameworks which serve as a starting point for your project.
 https://github.com/bcgov/iit-arch
+# Start project
+docker-compose up -d

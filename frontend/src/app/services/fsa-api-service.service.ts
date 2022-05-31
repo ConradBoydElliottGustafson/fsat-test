@@ -1,7 +1,10 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 /**
- * TODO: Place holder for our backend api call service.
+ * Backend api call service.
  */
 
 @Injectable({
@@ -9,5 +12,10 @@ import { Injectable } from '@angular/core';
 })
 export class FsaApiServiceService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  getCities(): Observable<any>{
+    return this.http.get(`http://${environment.api.host}/${environment.api.endpoint.cities}`);
+  }
+
 }

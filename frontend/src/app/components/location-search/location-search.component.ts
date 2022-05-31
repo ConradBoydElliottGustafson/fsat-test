@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { WeatherApiServiceService } from 'src/app/services/weather-api-service.service';
+import { FsaApiServiceService } from 'src/app/services/fsa-api-service.service';
 /**
  * This Location Search component take input search text location (city) from 
  * user and delicates to service for search.
@@ -14,7 +14,7 @@ export class LocationSearchComponent implements OnInit {
 
   model: any = {city: null};
 
-  constructor(private wtrApiService: WeatherApiServiceService) { }
+  constructor(private fsaApiService: FsaApiServiceService) { }
 
   ngOnInit(): void {
   }
@@ -23,6 +23,7 @@ export class LocationSearchComponent implements OnInit {
     if (searchForm.invalid) {
       return;
     }
-    this.wtrApiService.newCityToSearch(this.model.city);
+    // TODO
+    // this.fsaApiService.newCityToSearch(this.model.city);
   }
 }

@@ -9,16 +9,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CurrentWeatherComponent } from './components/current-weather/current-weather.component';
+import { ExampleComponent } from './components/example/example.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LocationSearchComponent } from './components/location-search/location-search.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     LocationSearchComponent,
-    CurrentWeatherComponent
+    ExampleComponent
   ],
   imports: [
     BrowserModule,
