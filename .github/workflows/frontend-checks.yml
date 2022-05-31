@@ -29,18 +29,18 @@ jobs:
           push: false
           tags: frontend:latest
 
-  # tests-frontend:
-  #   name: Tests-Frontend
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Checkout repository
-  #       uses: actions/checkout@v2
+  tests-frontend:
+    name: Tests-Frontend
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-  #     - name: Tests
-  #       run: |
-  #         cd frontend
-  #         npm ci
-  #         npm test
+      - name: Tests
+        run: |
+          cd frontend
+          npm ci
+          npm test
 
   # linting:
   #   name: Linting-Code
