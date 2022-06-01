@@ -29,3 +29,16 @@ Use following path on localhost for access during development:
 
 - frontend: localhost:4200
 
+change to test frontend pipeline
+change#2
+change3
+change4
+change7
+change8
+change9
+change10
+11
+12
+13
+change
+13
