@@ -9,6 +9,17 @@
 
 # Greenfield Template - DevOps Quickstart
 
+# Backend Quickstart
+
+1) For dockerized deployments ensure application.properties is configured to point to host: database, port: 5432
+    dockerized deployment: docker-compose up -d
+        this will start frontent, backend and database in containers on the same network bridge.
+2) For development and IDE run code ensure application.properties is configured to point to host: localhost, port: 5438
+    development deployment: 
+        docker-compose up -d (then shutdown backend manually)
+        cd backend
+        mvn clean install package && java -jar target/fsa-0.0.1-SNAPSHOT.jar
+
 ## Overview
 
 The Greenfield-template is a fully functional set of pipeline workflows and a starter application stack intended to help Agile DevOps teams hit the ground running.  Currently supports OpenShift with plans for AWS (Amazon Web Services).  Pipelines are run using [GitHub Actions](https://github.com/bcgov/greenfield-template/actions).
