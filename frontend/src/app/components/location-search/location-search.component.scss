@@ -1,0 +1,20 @@
+@import "../../../assets/styles/base/base.scss";
+
+.mat-form-field{
+  font-size: 13px;
+}
+.mat-button{
+  height: 33px;
+}
+.mat-toolbar{
+  background-color: $fc-bg;
+  color: $color;
+  margin: 3px 0;
+}
+.mat-error, .mat-form-field-invalid .mat-input-element, .mat-warn .mat-input-element{
+  color: $fc-invalid-color !important;
+  border-bottom-color: white !important;
+}
+// .mat-focused .placeholder{
+//   color: white;
+// }
