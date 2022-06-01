@@ -17,5 +17,9 @@ export class FsaApiServiceService {
   getCities(): Observable<any>{
     return this.http.get(`http://${environment.api.host}/${environment.api.endpoint.cities}`);
   }
+}
 
+  /** Return object interface */
+export interface CityResponse {
+  cityName: string;
 }
