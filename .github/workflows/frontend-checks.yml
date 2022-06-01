@@ -1,13 +1,13 @@
-# name: Frontend PR Checks
+name: Frontend PR Checks
 
-# on: 
+on: 
   
-#   pull_request:
-#     branches: [pipeline-cleanup]
-#     paths:
-#     - 'frontend/**'
+  pull_request:
+    branches: [pipeline-cleanup]
+    paths:
+    - 'frontend/**'
   
-# jobs:
+jobs:
 
 #   build-frontend:
 #     name: Build-Frontend
