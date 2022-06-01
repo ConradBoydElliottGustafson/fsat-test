@@ -2,10 +2,14 @@ package ca.cgi.fsa.entities;
 
 import java.util.Objects;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+import org.springframework.lang.NonNull;
 
 @Entity
 public class City {
@@ -13,7 +17,11 @@ public class City {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long cityId;
 
-    String cityName;
+    @Column(nullable = false)
+    private String cityName;
+
+    @OneToOne(mappedBy = "city")
+    private Person person;
 
     City() {
 
@@ -21,6 +29,22 @@ public class City {
 
     public City(String inCityName) {
         this.cityName = inCityName;
+    }
+
+    public long getCityId() {
+        return cityId;
+    }
+
+    public void setCityId(long cityId) {
+        this.cityId = cityId;
+    }
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
     }
 
     public String getCityName() {
