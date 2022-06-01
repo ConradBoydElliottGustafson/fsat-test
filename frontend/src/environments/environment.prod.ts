@@ -1,7 +1,7 @@
 export const environment = {
   production: true,
   api: {
-    host: 'localhost:8080',
+    host: 'localhost:4200/api',
     endpoint: {
       cities: 'cities',
       people: 'people'

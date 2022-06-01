@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   api: {
-    host: 'localhost:8080',
+    //  (for local development, port is 8080 to backend)
+    host: 'localhost:8080/api',
     endpoint: {
       cities: 'cities',
       people: 'people'
